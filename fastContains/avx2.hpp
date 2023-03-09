@@ -1,5 +1,4 @@
 #include <immintrin.h>
-#include <stdint.h>
 
 __attribute((always_inline)) inline bool
 contains(const uint8_t *data, uint8_t value, size_t size)

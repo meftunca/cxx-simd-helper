@@ -1,11 +1,10 @@
-#include <cstdint>
 #include <immintrin.h>
 
 __attribute((always_inline)) inline bool
-contains(std::uint8_t *arr, size_t size, std::uint8_t value)
+contains(uint8_t *arr, size_t size, uint8_t value)
 {
   // SIMD yüksek hızlandırma için, 256-bitlik SIMD türü olan __m256i kullanıyoruz.
-  // __m256i, 32 adet std::uint8_t değerini içerebilen bir türdür.
+  // __m256i, 32 adet uint8_t değerini içerebilen bir türdür.
   constexpr size_t SimdWidth = 32;
   size_t           simdCount = size / SimdWidth;
   __m256i          simdValue = _mm256_set1_epi8(value);

@@ -3,10 +3,10 @@
 #include <smmintrin.h>
 
 __attribute((always_inline)) inline bool
-contains(std::uint8_t *arr, size_t size, std::uint8_t value)
+contains(uint8_t *arr, size_t size, uint8_t value)
 {
   // SIMD yüksek hızlandırma için, 128-bitlik SIMD türü olan __m128i kullanıyoruz.
-  // __m128i, 16 adet std::uint8_t değerini içerebilen bir türdür.
+  // __m128i, 16 adet uint8_t değerini içerebilen bir türdür.
   constexpr size_t SimdWidth     = 16;
   constexpr size_t SimdAlignment = 16;
   size_t           simdCount     = size / SimdWidth;
